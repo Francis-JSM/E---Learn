@@ -44,7 +44,13 @@
     </div>
     <input type="hidden" name="perentSno" id="perentSno" value="" />
     <input type="hidden" name="postSno" id="postSno" value="{{ post.id }}" />
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      style="background: #9c6af9 !important; border: none"
+    >
+      Submit
+    </button>
   </form>
   {% else %}
   <p>Please log in to post comment</p>
@@ -88,6 +94,7 @@
           data-target="#replayBox{{ comment.id }}"
           aria-expanded="false"
           aria-controls="replayBox{{ comment.id }}"
+          style="background: #9c6af9 !important; border: none"
         >
           Reply</button
         >{% else %}
@@ -95,7 +102,7 @@
           class="btn btn-sm btn-primary"
           disabled
           type="button"
-          style="background: #9c6af9"
+          style="background: #9c6af9 !important"
         >
           Login to Reply
         </button>
@@ -128,7 +135,13 @@
                 id="postSno"
                 value="{{ post.id }}"
               />
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="background: #9c6af9 !important"
+              >
+                Submit
+              </button>
             </form>
             {% endif %}
           </div>
