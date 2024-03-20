@@ -232,6 +232,23 @@ background: linear-gradient(135deg, #667eea, #764ba2);
       padding: 50px 0;
     }
 
+   .container-gallery .card .card__head{
+  display: none;
+}
+
+.container-gallery {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+
+}
+
+.container-gallery .card:hover {
+  flex-grow: 1;
+}
+
+.container-gallery .card {
+  height: 35vmin;
+}
     .section-two {
       padding-left: 20px;
       padding-right: 20px;
