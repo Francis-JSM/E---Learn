@@ -507,7 +507,6 @@
                       class="form-control form-control-sm passwordshowsingup"
                       placeholder="Enter Password"
                       aria-describedby="password"
-                      pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
                       required
                     />
                     <small class="float-right showpasswordsingup">SHOW</small>
@@ -556,7 +555,7 @@
           <div class="footer-grid-item">
             <h2>Company</h2>
             <ul>
-              <li><a href="#">About Us</a></li>
+              <li><a href="{% url 'aboutUs' %}">About Us</a></li>
               <li><a href="#">Contact Us</a></li>
               <li><a href="#">Careers</a></li>
             </ul>
@@ -564,7 +563,7 @@
           <div class="footer-grid-item">
             <h2>Resources</h2>
             <ul>
-              <li><a href="#">Our Courses</a></li>
+              <li><a href="{% url 'courses' %}">Our Courses</a></li>
               <li><a href="#">FAQ</a></li>
               <li><a href="{% url 'bloghome' %}">Blog</a></li>
             </ul>
