@@ -1,14 +1,14 @@
 {%extends 'base.html'%} {%block title%}About Us{%endblock title%}{% block head%}
-{% load static %}
 <style>
   .colored {
     color: #9c6af9;
   }
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  .content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 20px;
   }
   .heading {
     padding-top: 40px;
@@ -20,12 +20,19 @@
   .content {
     flex: 1;
     font-family: "Aileron", sans-serif;
-    font-size: 18px;
-    padding-left: 20px;
-    max-width: 50%;
+    font-size: 1 rem;
+    /* padding-left: 20px; */
+    text-align: justify;
+    /* max-width: 50%; */
     box-sizing: border-box;
-    padding-top: 40px;
+    padding-top: 20px;
     margin-bottom: 50px;
+  }
+  .text {
+    font-family: "Aileron", sans-serif;
+    font-size: 1 rem;
+    /* padding-left: 20px; */
+    text-align: justify;
   }
   .content img {
     padding: 10px;
@@ -33,43 +40,95 @@
     height: auto;
     border-radius: 1rem;
   }
+
   @media screen and (max-width: 768px) {
-    .container {
-      flex-direction: column;
+    .content-container {
+      grid-template-columns: 1fr;
     }
     .content {
-      max-width: 100%; /* Full width on smaller screens */
-      padding-left: 0;
-      margin-bottom: 5px;
+      margin-bottom: 0;
     }
     .content img {
       padding: 0px;
-      margin-bottom: 20px;
+    }
+    .img-content {
+      margin-bottom: 40px;
     }
   }
 </style>
 {% endblock head %} {% block body %}
 
 <div class="container">
-  <div class="content">
-    <h2 class="heading"><span class="colored">About</span> Us</h2>
-    <p>
-      This comprehensive initiative involves the curation and development of
-      free courses focused on job readiness and skill empowerment, alongside the
-      creation and maintenance of an accessible website and app for user
-      engagement. It emphasizes networking and collaboration efforts to
-      establish connections with potential partners, NGOs, and marginalized
-      women. Human capital is prioritized, requiring a skilled team for content
-      creation, community management, and partnership development. The
-      initiative underscores the importance of a reliable technology
-      infrastructure, including servers, software, and platform maintenance, to
-      ensure a user-friendly experience. Building collaborative relationships is
-      a key aspect, with a focus on partnerships with NGOs, corporations, and
-      educators for content creation and support.
-    </p>
+  <h2 class="heading"><span class="colored">About</span> Us</h2>
+  <div class="content-container">
+    <div class="content">
+      <p>
+        This comprehensive initiative involves the curation and development of
+        free courses focused on job readiness and skill empowerment, alongside
+        the creation and maintenance of an accessible website and app for user
+        engagement. It emphasizes networking and collaboration efforts to
+        establish connections with potential partners, NGOs, and marginalized
+        women. Human capital is prioritized, requiring a skilled team for
+        content creation, community management, and partnership development. The
+        initiative underscores the importance of a reliable technology
+        infrastructure, including servers, software, and platform maintenance,
+        to ensure a user-friendly experience. Building collaborative
+        relationships is a key aspect, with a focus on partnerships with NGOs,
+        corporations, and educators for content creation and support.
+      </p>
+    </div>
+    <div class="content img-content">
+      <img
+        src="{% static 'images/aboutus.png' %}"
+        alt="About Us Image"
+        style="width: 100%; height: 100%"
+      />
+    </div>
   </div>
-  <div class="content">
-    <img src="{% static 'images/aboutus.png' %}" alt="About Us Image" />
+  <div class="mb-5">
+    <h4 class="colored">CURRENTLY CONNECTED NGOs</h4>
+    <div class="row mt-3 align-items-stretch">
+      <!-- Added align-items-stretch class -->
+      <div class="col-12 col-md-6">
+        <div class="shadow-lg p-3 bg-white rounded h-100">
+          <!-- Added h-100 class -->
+          <p class="text-justify text">
+            The Bhai Ghanayya Ji Charitable Trust, operating as 'Unique Home'
+            since May 17th, 1993, is dedicated to caring for abandoned children,
+            especially baby girls found in distressing conditions. The aim is
+            the moral, social, cultural, and economic uplift of these children,
+            transcending distinctions of caste, creed, and religion. Bibi
+            Prakaash Kaur, the driving force and lifetime managing trustee,
+            passionately rehabilitates those shunned by society, particularly in
+            a region known for female foeticide. Despite her advanced age, she
+            mothers 60 abandoned girls, providing them with a hopeful future and
+            access to education. The trust appeals for support from kind-hearted
+            individuals to contribute to this mass social effort, ensuring these
+            children are raised as enlightened and self-respecting citizens,
+            reclaiming their due place in society.
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="shadow-lg p-3 bg-white rounded h-100 content">
+          <!-- Added h-100 class -->
+          <p class="text-justify text">
+            Gursidak Foundation, a registered NGO under the Companies Act 2013
+            (License Number 122619), is committed to offering free tuition
+            classes and financial support to students facing economic barriers
+            in pursuing higher education. With a vision for a society where
+            every child receives quality education, the foundation believes in
+            education as both a means and an end to a better life, empowering
+            individuals and fostering economic and social independence.
+            Recognizing the transformative impact of education, Gursidak
+            Foundation emphasizes the interconnectedness of child education with
+            family well-being, healthcare, and skills development for
+            sustainable social transformation, aspiring to create opportunities
+            for success and awareness on societal issues.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock body %}

@@ -317,3 +317,507 @@
   </section>
 </div>
 {%endblock body%}
+
+{%extends 'base.html'%} {% load static %} {%block title%}Home{%endblock title%}
+{%block head%}
+<style>
+  @font-face {
+    font-family: "Aileron";
+    src: url("/fonts/aileron/Aileron-Bold.otf") format("otf");
+  }
+
+  /* Custom styles */
+  .container-fluid {
+    padding: 0;
+  }
+  .section-one{
+    padding: 100px 0;
+    overflow: hidden;
+  }
+
+  .section-one .colored{
+    color: #9c6af9;
+  }
+  .section-one .container2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section-one .content {
+    flex: 1;
+    padding-left: 20px;
+  }
+
+  .section-one h2 {
+    font-family: "Aileron", sans-serif;
+    font-size: 94px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: 0.96;
+    text-align: left;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+
+  .section-one h4 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    padding-bottom: 8px;
+  }
+
+  .section-one p {
+    font-family: Aileron, sans-serif;
+    font-size: 19px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.58;
+    margin-top: 13px;
+  }
+
+  .section-one img {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .section-two{
+    /* padding-left: 160px; */
+    /* padding-right: 60px; */
+    font-family: "Aileron",sans-serif;
+  }
+
+  :root {
+	--background: #9c6af9;
+	--primary: #88D5BF;
+	--secondary: #5D6BF8;
+	--third: #e27fcb;
+}
+
+  .section-two .colored{
+     color: #9c6af9;
+    font-weight: 700;
+  }
+
+  .section-two .btn-elegant {
+    background-color: #9c6af9;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+
+  .section-two .btn-elegant:hover {
+    background-color: white;
+    color: #9c6af9;
+    border: 2px solid #9c6af9;
+  }
+
+  .prop_card{
+ background: linear-gradient(135deg, #667eea, #764ba2);
+  color: whitesmoke;
+}
+  .section-two .card {
+    border-radius: 10px !important;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  .section-two .card:hover {
+    transform: translateY(-5px) scale(1.03); /* Scale the card slightly */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  .section-two .card-body-heading {
+    max-height: 4.5em; /* Adjust as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+
+    .section-two .duration-price {
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-between;
+  }
+
+  .section-three{
+    /* padding-left: 160px; */
+    /* padding-right: 60px; */
+    font-family: "Aileron",sans-serif;
+  }
+
+  .section-three .colored{
+    color: #9c6af9;
+    font-weight: 700;
+  
+}
+
+.sec-title{
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.second-stack{
+  margin-top: 70px
+}
+.third-stack{
+  margin-top: 140px
+}
+
+.custom-border {
+  border-radius: 1rem;         
+            
+    display: inline-block;
+    color: #9c6af9;
+    width: 60px;
+    text-align: center;
+}
+
+.container-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 10vmin; */
+  overflow: hidden;
+  /* transform: skew(5deg); */
+}
+
+.container-gallery .card {
+  flex: 1;
+  transition: all 1s ease-in-out;
+  height: 45vmin;
+  position: relative;
+}
+
+.container-gallery .card .card__head {
+  color: white;
+  font-weight: bold;
+background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 0.5em;
+  transform: rotate(-90deg);
+  transform-origin: 0% 0%;
+  transition: all 0.5s ease-in-out;
+  min-width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 1em;
+  white-space: nowrap;
+}
+
+.container-gallery .card:hover {
+  flex-grow: 10;
+}
+
+.container-gallery .card:hover img {
+  filter: grayscale(0);
+}
+
+.container-gallery .card:hover .card__head {
+  text-align: center;
+  top: calc(100% - 2em);
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 2em;
+  transform: rotate(0deg) skew(-5deg);
+}
+
+.container-gallery .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 1s ease-in-out;
+  filter: grayscale(100%);
+}
+
+.container-gallery .card img:hover {
+
+  object-fit: contain;
+}
+
+
+.container-gallery .card:not(:nth-child(5)) {
+  margin-right: 1em;
+}
+
+
+
+@media (max-width: 768px) {
+    .section-one {
+      padding: 50px 0;
+    }
+
+    .section-two {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .section-three {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+
+    .section-one h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .section-one h4 {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.25;
+    padding-bottom: 8px;
+  }
+  .section-one .container2 {
+    flex-direction: column;
+  }
+
+  .section-one .content {
+    flex: 1;
+    padding-left: 0px;
+  }
+  .sec-title{
+  font-size: 35px;
+  font-weight: 700;
+}
+.second-stack,.third-stack{
+  margin-top: 0;
+}
+
+
+
+.section-two .btn-elegant {
+    width: 100%;
+  }
+  }
+</style>
+{%endblock head%} {%block body%}
+<!-- Main content -->
+<div class="main-content">
+  <!-- Section with text and image -->
+   <section class="section-one">
+    <div class="container container2">
+      <div class="content">
+        <h4 class="colored">Upskilling made easy with our</h4>
+        <h2>Intelligently Designed Courses</h2>
+        <p>
+          <span>Sudden urge to change career, start a business, or pick up a new
+          skill? Well, you’re in luck. Whatever the goal - </span><span class="colored">
+          take your next step
+          with Upskillist.</span>
+          </p>
+      </div>
+      <div class="content">
+         <img
+          src="{% static 'images/hero.jpg' %}"
+          alt="Placeholder Image"
+          style="border-radius: 1rem; max-height: 400px;"
+        />
+      </div>
+    </div>
+  </section>
+
+
+  <section class=" container" style="margin-bottom: 110px;">
+    <h3 class="ml-2 mb-4 colored" style="font-family: 'Aileron',sans-serif; font-weight: bold;">Our Commitment</h2>
+      <h2 class ="ml-2 mb-4 sec-title" style="font-family: 'Aileron',sans-serif;">VALUE PROPOSITIONS</h2>
+    <!-- Move the heading above the cards and center it -->
+    <div class="row justify-content-center align-items-stretch">
+      <div class=" col-12 col-md-6">
+        <div class=" p-3 rounded shadow-lg prop_card h-100" style="border-radius: 10px !important;">
+          <div class=" bg-white custom-border">
+            <h1>1.</h1>
+          </div>
+          <div class=" mt-3">
+            
+            <h5 class=" text-center mb-3">EMPOWERMENT THROUGH SKILL DEVELOPMENT
+           
+
+            </h5>
+            <p>
+              OFFERING FREE COURSES TAILORED TO JOB
+
+ READINESS, EMPOWERING MARGINALIZED 
+
+WOMEN WITH ESSENTIAL SKILLS
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class=" col-12 col-md-6">
+        <div class=" p-3 rounded shadow-lg prop_card h-100 " style="border-radius: 10px !important">
+          <div class=" bg-white custom-border">
+            <h1>2.</h1>
+          </div>
+          <div class=" mt-3 mb-3">
+            
+            <h5 class=" text-center">JOB OPPURTUNITY CONNECTIONS
+
+            </h5>
+            <p>
+              PROVIDING A PLATFORM CONNECTING THESE
+
+              WOMEN WITH EMPLOYMENT OPPORTUNITIES, 
+             
+             FOSTERING INCLUSION AND SUPPORT 
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+  </section>
+
+  <section class="section-two">
+    
+    <div class="container my-4">
+      <h2 class="colored">Explore</h2>
+    <h3 class="sec-title">New Courses</h3>
+  <div class="row">
+    {% for course in course %}
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <!-- Adjust column classes as needed for optimal number of cards per row -->
+      <div class="card my-4 shadow-lg p-3 bg-white rounded">
+        <img
+          src="{{ course.thumbnail_url }}"
+          class="card-img-top"
+          alt="Course Thumbnail"
+          height="150"
+        />
+        <div class="card-body-heading">
+          <h5 class="card-title mt-2">{{ course.title }}</h5>
+        </div>
+                <div class="duration-price">
+          <div class="duration">
+            <img src="https://img.icons8.com/android/20/000000/time.png" />
+            {{ course.course_length }}
+          </div>
+          <div class="price">
+            <img
+              src="https://img.icons8.com/metro/20/000000/price-tag-euro.png"
+            />
+            {% if course.course_type == "PAID" %} ₹ {{ course.course_price }} /-
+            {% else %} {{ course.course_type }} {% endif %}
+          </div>
+        </div>
+        <div class="card-body-button mt-4">
+          <center>
+            <a
+              href="{% url 'course_detail' course.course_slug %}"
+              class="btn btn-elegant"
+              >View Course Details</a
+            >
+          </center>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+  </section>
+
+  <section class="section-three">
+
+    <div class="container">
+      <h3 class="ml-2 mb-4 colored">Learn With</h2>
+        <h2 class ="ml-2 mb-4 sec-title">Everything you need</h2>
+      <!-- Move the heading above the cards and center it -->
+      <div class="row justify-content-center">
+        <!-- Center the cards -->
+        <div class="col-md-4 mt-4 mt-md-0">
+          <div class="card border-0">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdnKwJkZ0415DVg5P5-vhvMik3JTJIncklyw&usqp=CAU"
+              class="card-img-top rounded"
+              alt="Feature Image 1"
+              style="width: 100%; height: auto"
+            />
+            <div class="card-body text-center">
+              <h3 class="card-title"><span class="colored">Interactive</span> Learning</h3>
+              <p class="card-text">
+                Engage with hands-on projects and quizzes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 second-stack">
+          <div class="card border-0">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6dbx2qXQHu6rbgUdR3RUiii806vvbC7EG6w&usqp=CAU"
+              class="card-img-top rounded"
+              alt="Feature Image 2"
+              style="width: 100%; height: auto"
+            />
+            <div class="card-body text-center">
+              <h3 class="card-title">Expert <span class="colored">Guidance</span></h3>
+              <p class="card-text">
+                Learn from industry experts with real-world experience.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div div class="col-md-4 mb-4 third-stack">
+          <div class="card border-0">
+            <img
+              src="https://media.istockphoto.com/id/857146092/photo/sea-of-hands.jpg?s=612x612&w=0&k=20&c=mpZdzYstDIE_OGQ9PivyYdtA5Vq8wwbZF_uazfbfuwo="
+              class="card-img-top rounded"
+              alt="Feature Image 3"
+              style="width: 100%; height: auto"
+            />
+            <div class="card-body text-center">
+              <h3 class="card-title"><span class="colored">Community</span> Support</h3>
+              <p class="card-text">
+                Connect with fellow learners and mentors in our community.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container" style="margin-bottom: 50px;">
+    <h3 class="ml-2 mb-4 colored">Spreading Love</h2>
+      <h2 class ="ml-2 mb-4 sec-title">Building a better future...</h2>
+    <div class="container-gallery" >
+      <div class="card">
+        <img src="{% static 'images/1.jpeg' %}">
+        <div class="card__head">We Listen</div>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/2.jpeg' %}">
+        <div class="card__head">We Love</div>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/3.jpeg' %}">
+        <div class="card__head">We Care</div>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/4.jpeg' %}">
+        <div class="card__head">We Share</div>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/5.jpeg' %}">
+        <div class="card__head">We Provide</div>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/6.jpeg' %}">
+        <div class="card__head">We Hear</div>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/7.jpeg' %}">
+        <div class="card__head">We Smile</div>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/8.jpeg' %}">
+        <div class="card__head">We are together</div>
+      </div>
+    </div>
+  </section>
+</div>
+{%endblock body%}
